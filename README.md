@@ -1,64 +1,42 @@
-# Mayinela V3
-
-Userbot de Telegram para Termux con prefijo configurable (por defecto `.`).
-
-## V3
-- Menú dinámico con botones: `.menu`.
-- Estética femenina/aseuxal con 🖤🩶🤍💜.
-- Bucles de emojis: `.loopace`, `.loopflag`, `.loopheart`, `.loopspark`, `.loopflower`, `.loopstars`, `.loopmoon`, `.looprainbow`, `.loopfem`, `.loopemoji`.
-- Cada bucle edita el mismo mensaje durante un máximo de 10 minutos y se detiene si borras ese mensaje.
-- `.stoploops` detiene los bucles del chat.
-- `.loopstatus` muestra los bucles activos.
-- Protección de mensajes privados de desconocidos: 3 intentos; después se bloquea automáticamente si no fue aprobado.
-- `.pending` lista pendientes; `.approve ID` aprueba; `.block ID` bloquea manualmente.
-- Los usuarios marcados como contacto o previamente aprobados no pasan por la protección.
-
-## Prefijo
-En `.env` usa:
-
-`MAYINELA_PREFIX=.`
-
-No uses la variable `PREFIX` de Termux.
-
-
-### V4
-Se eliminaron los aliases y los comandos `toolXXX` de relleno. El menú ahora muestra únicamente comandos con una función concreta.
-
-## V5 — Moderación, GBAN, filtros y anti-spam
-
-### Moderación
-- `.ban`, `.unban`, `.kick`
-- `.mute`, `.unmute` (heredados del catálogo)
-- `.warn`, `.unwarn`, `.warnings`
-- `.promote`, `.demote`, `.purge`, `.pin`, `.unpin`
-
-### GBAN
-- `.gban` — responde al usuario para añadirlo al bloqueo global.
-- `.ungban ID` o responde al usuario.
-- `.gbanlist`
-- `.gbancheck ID`
-
-El guardián GBAN revisa mensajes entrantes en grupos donde Mayinela esté presente y tenga permisos para bloquear.
-
-### Filtros
-- `.filter palabra o frase`
-- `.unfilter palabra o frase`
-- `.filters`
-
-Los mensajes que contengan un filtro activo se eliminan automáticamente.
-
-### Anti-spam
-- `.antispam on`
-- `.antispam off`
-- `.antispamstatus`
-
-Por defecto detecta 6 mensajes del mismo usuario en 10 segundos y aplica un silencio de 10 minutos. Los administradores y la propietaria quedan excluidos.
-
-Los comandos de esta sección están restringidos a la propietaria.
-
-## V7 — Voz
-- `.voz <texto>` genera una nota de voz.
-- `.voz on/off` controla el modo voz informativo.
-- `.voz status` comprueba TTS.
-- Voz predeterminada: `es-MX-DaliaNeural`, con pequeños ajustes de velocidad y tono para un estilo femenino/otaku.
-- Requiere conexión a Internet para generar el audio mediante Edge TTS.
+🌸 Mayinela V7
+Userbot de Telegram para Termux, desarrollado en Python.
+📱 Instalación en Termux
+1. Instalar Termux
+Se recomienda utilizar una versión actualizada de Termux.
+2. Actualizar paquetes
+pkg update && pkg upgrade -y
+3. Instalar dependencias básicas
+pkg install git python unzip -y
+4. Clonar el repositorio
+git clone https://github.com/hirosshyeuc-creator/MayinelaV7.git
+5. Entrar en la carpeta
+cd MayinelaV7
+6. Instalar las dependencias de Python
+pip install -r requirements.txt
+7. Configurar las credenciales
+Copia el archivo de ejemplo:
+cp .env.example .env
+Edita .env:
+nano .env
+Introduce tus propias credenciales de Telegram.
+⚠️ Nunca publiques tu archivo .env, API_HASH, tokens ni códigos de inicio de sesión.
+8. Iniciar Mayinela
+python main.py
+Durante el primer inicio, Telegram puede solicitar el código de inicio de sesión.
+🔄 Actualizar Mayinela
+Desde la carpeta del proyecto:
+git pull
+Después puedes iniciar nuevamente:
+python main.py
+🌸 Comando principal
+Una vez iniciado el userbot:
+.menu
+Muestra el menú principal y las funciones disponibles.
+🔐 Seguridad
+No compartas públicamente:
+API_ID
+API_HASH
+números de teléfono
+códigos de Telegram
+archivos .session
+archivo .env
