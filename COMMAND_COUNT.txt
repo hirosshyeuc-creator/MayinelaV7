@@ -1,0 +1,1 @@
+Mayinela V6 — menú único y navegación de herramientas. El total exacto se valida al cargar plugins.
